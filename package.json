@@ -16,5 +16,32 @@
   "bugs": {
     "url": "https://github.com/kevinkace/fire-particles/issues"
   },
-  "homepage": "https://github.com/kevinkace/fire-particles#readme"
+  "homepage": "https://github.com/kevinkace/fire-particles#readme",
+  "dependencies": {
+    "eslint": "^4.0.0",
+    "eslint-config-arenanet": "^3.3.1",
+    "http-server": "^0.10.0",
+    "stylelint": "^7.11.0",
+    "stylelint-config-arenanet": "^1.2.0",
+    "stylelint-config-standard": "^16.0.0"
+  },
+  "eslintConfig": {
+    "extends": "arenanet",
+    "env": {
+      "node": true,
+      "mocha": true,
+      "browser": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 5,
+      "sourceType": "module"
+    },
+    "rules": {
+      "prefer-template": "off",
+      "consistent-this": "off"
+    }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-arenanet"
+  }
 }

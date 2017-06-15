@@ -7,9 +7,9 @@ const M = Matter,
 
     MAX_POOL = 300,
 
-    particleRate = 10; // pps
+    particleRate = 1; // pps
 
-let prevEmitTime,
+let emitDelta = 0,
     idx = 0,
     engine;
 
@@ -32,18 +32,24 @@ function getRand(min, max) {
 }
 
 window.updateBodies = function(delta) {
-    let numbToAdd = 1;//Math.round(particleRate/1000 * delta));
+    let  particlesToAdd;
 
-    if(!numbToAdd) {
+    emitDelta = emitDelta + delta;
+
+    particlesToAdd = Math.round(particleRate/1000 * emitDelta);
+
+    console.log(`${emitDelta} : ${particlesToAdd}`);
+
+    if(!particlesToAdd) {
         return;
     }
 
-    // prevEmitTime = currTime;
+    emitDelta = 0;
 
-    for(let i = 0; i <= numbToAdd; i++) {
-        let x = getRand(130, 700),
-            y = getRand(500, 550),
-            r = getRand(0.2, 2),
+    for(let i = 0; i <= particlesToAdd; i++) {
+        let x  = getRand(130, 700),
+            y  = getRand(500, 550),
+            r  = getRand(0.2, 2),
             xd = getRand(-2, 2),
             yd = getRand(-1, 1);
 
