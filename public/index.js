@@ -52,7 +52,9 @@ m.mount(document.getElementById("mount"), {
         m("button", { onclick : start }, "Start"),
         m("button", { onclick : stop }, "Stop"),
         m("label", "Frames", m("input", { readonly : true, value : frames })),
-        m("div", {
+        m("canvas", {
+            width : window.innerWidth,
+            height : Math.round(9 / 16 * window.innerWidth),
             oncreate : (canvasVnode) => {
                 createWorld(canvasVnode.dom);
             }
