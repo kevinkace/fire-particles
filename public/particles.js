@@ -32,13 +32,11 @@ function getRand(min, max) {
 }
 
 window.updateBodies = function(delta) {
-    let  particlesToAdd;
+    let particlesToAdd;
 
     emitDelta = emitDelta + delta;
 
     particlesToAdd = Math.round(particleRate/1000 * emitDelta);
-
-    console.log(`${emitDelta} : ${particlesToAdd}`);
 
     if(!particlesToAdd) {
         return;
@@ -46,7 +44,7 @@ window.updateBodies = function(delta) {
 
     emitDelta = 0;
 
-    for(let i = 0; i <= particlesToAdd; i++) {
+    for(let i = 0; i < particlesToAdd; i++) {
         let x  = getRand(130, 700),
             y  = getRand(500, 550),
             r  = getRand(0.2, 2),
