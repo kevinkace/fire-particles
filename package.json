@@ -19,7 +19,7 @@
   "homepage": "https://github.com/kevinkace/fire-particles#readme",
   "dependencies": {
     "eslint": "^6.6.0",
-    "eslint-config-arenanet": "^3.3.1",
+    "eslint-config-arenanet": "^4.4.3",
     "http-server": "^0.11.1",
     "stylelint": "^7.13.0",
     "stylelint-config-arenanet": "^1.2.0",
